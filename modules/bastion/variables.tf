@@ -13,12 +13,6 @@ variable "vpc_info" {
   type = any
 }
 
-variable "eks_cluster_info" {
-  description = "eks_cluster_info"
-  type = any
-  default = null
-}
-
 variable "vpc_id" {
   description = "vpc_id"
   type = any
