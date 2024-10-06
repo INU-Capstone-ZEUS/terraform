@@ -1,3 +1,5 @@
 .terraform 
 *.tfstate 
 *.tfstate.backup
+bastion_key.pem
+.terraform.lock.hcl
