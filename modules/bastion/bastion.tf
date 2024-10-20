@@ -18,7 +18,6 @@ resource "aws_instance" "bastion" {
   mkdir -p /home/ec2-user/.docker/cli-plugins
   curl -SL https://github.com/docker/compose/releases/download/v2.29.6/docker-compose-linux-x86_64 -o /home/ec2-user/.docker/cli-plugins/docker-compose
   chmod +x /home/ec2-user/.docker/cli-plugins/docker-compose
-  sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
   sudo dd if=/dev/zero of=/swapfile bs=128M count=16
   sudo chmod 600 /swapfile
