@@ -12,6 +12,14 @@ resource "aws_instance" "bastion" {
   sudo yum install -y docker
   sudo service docker start
   sudo usermod -a -G docker ec2-user
+
+  sudo timedatectl set-timezone Asia/Seoul
+
+  sudo dd if=/dev/zero of=/swapfile bs=128M count=16
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+  sudo swapon /swapfile
+  echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab
   EOF
 
   tags = {
