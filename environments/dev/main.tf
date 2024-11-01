@@ -17,4 +17,9 @@ module "bastion" {
   subnets_public_ids  = module.vpc.subnets_public_ids
 }
 
+module "s3" {
+  source = "../../modules/s3"
 
+  common_info = local.common_info
+  common_tags = local.common_tags
+}
