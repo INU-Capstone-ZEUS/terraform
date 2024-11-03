@@ -4,11 +4,11 @@ resource "tls_private_key" "bastion_key" {
   rsa_bits  = 4096
 }
 
-# Create local file
-resource "local_file" "bastion_key" {
-  content  = tls_private_key.bastion_key.private_key_pem
-  filename = "./bastion_key.pem"
-}
+# # Create local file
+# resource "local_file" "bastion_key" {
+#   content  = tls_private_key.bastion_key.private_key_pem
+#   filename = "./bastion_key.pem"
+# }
 
 # Create AWS key pair
 resource "aws_key_pair" "bastion_key" {
